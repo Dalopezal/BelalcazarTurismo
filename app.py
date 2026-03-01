@@ -1,7 +1,9 @@
 import streamlit as st
 import google.generativeai as genai
 
-API_KEY = "AIzaSyAXYmiCr0sZZCLrGbMbbh10wckFm0YUjFU"
+API_KEY = st.secrets["GOOGLE_API_KEY"]
+
+genai.configure(api_key=API_KEY)
 
 # ── Configuración de página ──────────────────────────────────────────────────
 st.set_page_config(
